@@ -1,0 +1,11 @@
+Alicia Zhang
+
+1. To build the program, navigate to the directory containing the multi-lookup.c, util.c, array.c files.
+2. run `make` to build the program.
+3. run `make clean` to cleanup any extra .o files or executables.
+4. run `./multi-lookup <# requester> <# resolver> <requester log> <resolver log> [ <data file> ... ]` to execute the program. 
+
+For example, `./multi-lookup 10 10 serviced.txt resolved.txt input/names*.txt` will run the program with 10 requester threads, 10 resolver threads, a requester log "serviced.txt", a resolver log "resolved.txt", and input files matching the pattern names*.txt (names1.txt, names2.txt, etc.) from the input directory. 
+
+Additional comments:
+This program was executed with a shared array implemented as a circular queue. Additionally, I use the poison pill method to safely join all threads and conclude the program. 
